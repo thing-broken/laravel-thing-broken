@@ -1,0 +1,23 @@
+{
+    "name": "thing-broken/laravel-thing-broken",
+    "description": "A laravel adaptation of the Thing Broken library",
+    "type": "library",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Sam Littler",
+            "email": "samlittler57@gmail.com"
+        }
+    ],
+    "minimum-stability": "dev",
+    "require": {
+        "php": ">=7.0",
+        "illuminate/support": "^5.0",
+        "thing-broken/thing-broken": "dev-master"
+    },
+    "autoload": {
+        "psr-4": {
+            "ThingBroken\\LaravelThingBroken\\": "src/"
+        }
+    }
+}
