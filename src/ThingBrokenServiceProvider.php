@@ -15,7 +15,7 @@ class ThingBrokenServiceProvider extends ServiceProvider
             return;
         }
 
-        $this->app->bind('ThingBroken', function () {
+        $this->app->bind('thingbroken', function () {
             Client::init(static::config('api_key'));
             return Client::getInstance();
         });
