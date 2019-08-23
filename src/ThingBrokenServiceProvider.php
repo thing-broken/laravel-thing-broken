@@ -1,24 +1,35 @@
 <?php
 
-namespace ThingBroken\LaravelThingBroken;
+namespace App\Providers;
 
-use Illuminate\Contracts\Foundation\Application;
-use Illuminate\Support\Facades\Config;
 use Illuminate\Support\ServiceProvider;
 use ThingBroken\ThingBroken\Client;
+use ThingBroken\ThingBroken\Event;
 
 class ThingBrokenServiceProvider extends ServiceProvider
 {
+    /**
+     * Register services.
+     *
+     * @return void
+     */
     public function register()
     {
-        if (!$this->isSetup()) {
-            return;
-        }
-
         $this->app->bind('thingbroken', function () {
-            Client::init(static::config('api_key'));
-            return Client::getInstance();
+            Client::init(self::config('api_key'));
+            $client = Client::getInstance();
+            return new $client;
         });
+    }
+
+    /**
+     * Bootstrap services.
+     *
+     * @return void
+     */
+    public function boot()
+    {
+        //
     }
 
     private function isSetup() : bool
@@ -30,7 +41,7 @@ class ThingBrokenServiceProvider extends ServiceProvider
 
     private static function config($key) : string
     {
-        $key = 'logging.channels.thing-broken.' . $key;
+        $key = 'services.thing-broken.' . $key;
 
         return Config::get($key, 'motherpleasemayi');
     }
