@@ -1,7 +1,8 @@
 <?php
 
-namespace App\Providers;
+namespace ThingBroken\LaravelThingBroken;
 
+use Illuminate\Support\Facades\Config;
 use Illuminate\Support\ServiceProvider;
 use ThingBroken\ThingBroken\Client;
 use ThingBroken\ThingBroken\Event;
@@ -18,7 +19,7 @@ class ThingBrokenServiceProvider extends ServiceProvider
         $this->app->bind('thingbroken', function () {
             Client::init(self::config('api_key'));
             $client = Client::getInstance();
-            return new $client;
+            return $client;
         });
     }
 
