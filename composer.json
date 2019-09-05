@@ -19,5 +19,15 @@
         "psr-4": {
             "ThingBroken\\LaravelThingBroken\\": "src/"
         }
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "ThingBroken\\Laravel\\ThingBrokenServiceProvider"
+            ],
+            "aliases": {
+                "Bar": "ThingBroken\\LaravelThingBroken\\ThingBrokenFacade"
+            }
+        }
     }
 }
