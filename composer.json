@@ -23,7 +23,7 @@
     "extra": {
         "laravel": {
             "providers": [
-                "ThingBroken\\Laravel\\ThingBrokenServiceProvider"
+                "ThingBroken\\LaravelThingBroken\\ThingBrokenServiceProvider"
             ],
             "aliases": {
                 "ThingBroken": "ThingBroken\\LaravelThingBroken\\ThingBrokenFacade"
