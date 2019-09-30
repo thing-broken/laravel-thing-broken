@@ -12,7 +12,7 @@
     "minimum-stability": "dev",
     "require": {
         "php": ">=7.0",
-        "illuminate/support": "^5.0",
+        "illuminate/support": ">=5.0",
         "thing-broken/thing-broken": "^0.8.0"
     },
     "autoload": {
